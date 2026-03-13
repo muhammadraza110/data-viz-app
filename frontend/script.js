@@ -1,5 +1,5 @@
 // Configuration
-const API_URL = 'http://localhost:5000';
+const API_URL = 'https://your-render-url.onrender.com';
 
 // Global variables
 let selectedFile = null;
