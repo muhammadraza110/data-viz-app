@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Visualization Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📊 Data Visualization Dashboard</h1>
+            <p>Upload your data and get instant insights with interactive charts</p>
+        </header>
+
+        <!-- Upload Section -->
+        <section class="upload-section" id="uploadSection">
+            <div class="upload-box">
+                <div class="upload-icon">📁</div>
+                <h2>Upload Your Data</h2>
+                <p>Support for CSV, Excel (.xlsx, .xls) files</p>
+                <input type="file" id="fileInput" accept=".csv,.xlsx,.xls" style="display: none;">
+                <button class="btn-primary" onclick="document.getElementById('fileInput').click()">
+                    Choose File
+                </button>
+                <p class="file-name" id="fileName"></p>
+                <button class="btn-secondary" id="analyzeBtn" style="display: none;">
+                    Analyze Data
+                </button>
+            </div>
+        </section>
+
+        <!-- Loading Spinner -->
+        <div class="loading" id="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Analyzing your data...</p>
+        </div>
+
+        <!-- Dashboard Section -->
+        <section class="dashboard" id="dashboard" style="display: none;">
+            
+            <!-- KPI Cards -->
+            <div class="kpi-section">
+                <h2>📈 Key Performance Indicators</h2>
+                <div class="kpi-grid" id="kpiGrid">
+                    <!-- KPI cards will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Summary Section -->
+            <div class="summary-section">
+                <h2>📋 Data Summary</h2>
+                <div class="summary-cards" id="summaryCards">
+                    <!-- Summary cards will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Insights Section -->
+            <div class="insights-section">
+                <h2>💡 Key Insights</h2>
+                <div class="insights-list" id="insightsList">
+                    <!-- Insights will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-section">
+                <h2>📊 Visual Analytics</h2>
+                
+                <div class="chart-grid">
+                    <!-- Bar Chart -->
+                    <div class="chart-card">
+                        <h3 id="barChartTitle">Distribution</h3>
+                        <canvas id="barChart"></canvas>
+                    </div>
+
+                    <!-- Line Chart -->
+                    <div class="chart-card">
+                        <h3 id="lineChartTitle">Trend Analysis</h3>
+                        <canvas id="lineChart"></canvas>
+                    </div>
+
+                    <!-- Pie Chart -->
+                    <div class="chart-card">
+                        <h3 id="pieChartTitle">Composition</h3>
+                        <canvas id="pieChart"></canvas>
+                    </div>
+
+                    <!-- Multi Bar Chart -->
+                    <div class="chart-card">
+                        <h3>Comparison</h3>
+                        <canvas id="multiBarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Preview -->
+            <div class="preview-section">
+                <h2>👁️ Data Preview</h2>
+                <div class="table-container" id="tableContainer">
+                    <!-- Table will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Reset Button -->
+            <div class="reset-section">
+                <button class="btn-primary" onclick="resetDashboard()">
+                    Upload New File
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
