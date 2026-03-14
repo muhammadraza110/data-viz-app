@@ -7,7 +7,13 @@ from datetime import datetime
 import json
 
 app = Flask(__name__)
-CORS(app, origins="*", allow_headers="*", methods="*")
+CORS(app, 
+    origins="*",
+    methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["*"],
+    expose_headers=["*"],
+    supports_credentials=False,
+    max_age=86400)
 
 # Configure upload folder
 UPLOAD_FOLDER = 'uploads'
