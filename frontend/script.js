@@ -1,6 +1,5 @@
 // Configuration
-const API_URL = 'https://your-render-url.onrender.com';
-
+const API_URL = 'https://data-viz-app-6vrz.onrender.com';
 // Global variables
 let selectedFile = null;
 let chartInstances = {};

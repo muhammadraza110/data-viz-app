@@ -7,7 +7,7 @@ from datetime import datetime
 import json
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins="*", allow_headers="*", methods="*")
 
 # Configure upload folder
 UPLOAD_FOLDER = 'uploads'
@@ -188,4 +188,5 @@ def health_check():
     return jsonify({'status': 'healthy', 'message': 'API is running'})
 
 if __name__ == '__main__':
-    app.run()
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
